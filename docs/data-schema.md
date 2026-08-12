@@ -31,6 +31,8 @@ RPC whole-block collection adds a `source` object containing RPC method and verb
 
 The structural summary's per-block entries include transaction, witness-transaction, and input counts plus stripped bytes, witness serialization bytes, BIP141 weight, and the block's maximum transaction witness size. The inference output records the sampling-plan hash, stratum inclusion probabilities/design weights, estimated universe totals, finite-population standard errors, and rescaled block-bootstrap intervals.
 
+Adversarial construction schema version 1 records transformation, objective, declared opaque capacity, validity level and limitations, exact parameters, lifecycle stages, transaction identifiers, structural sizes, witness element sizes, BIP141 weight, and weight per opaque byte. `candidate_model` is null in the baseline suite. Transaction hex and opaque element contents are excluded.
+
 ## Per-input fields
 
 Each `inputs` entry contains its index, displayed prevout transaction ID, prevout output index, scriptSig size, sequence, base serialized size, and witness metrics. `witness.element_sizes` preserves element boundaries without exporting element contents.

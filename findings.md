@@ -41,3 +41,7 @@ These questions must remain explicitly unanswered until representative data and 
 ## Pre-model apparatus
 
 The protected-cohort contract, adversarial transformation contract, and stratified whole-block inference method were specified before any alternative accounting model. Historical uncertainty uses blocks as clusters and includes the finite population correction; transaction counts are not misrepresented as independent sampling units.
+
+The first adversarial engine is model-free and serialization-only. It can measure exact BIP141 costs and framing discontinuities for restructuring templates, including setup/spend lifecycle weight, but it supplies no evidence that those templates are consensus-valid, standard, or relayable. Those stronger validity levels remain required before a bypass result can support a policy claim.
+
+In the version-1 baseline sweep, a one-input template carrying 96,000 opaque witness bytes measures 96,336 WU, or 1.0035 WU per opaque byte. Splitting the same capacity across two inputs adds 166 WU; splitting it across two one-input transactions adds 332 WU. Manufacturing and then spending two synthetic UTXOs totals 97,050 WU when setup is included. Crossing a single witness element from 252 to 253 bytes or from 65,535 to 65,536 bytes adds three WU: one content byte and a two-byte CompactSize expansion. These are exact serialization/BIP141 observations, not evidence that the templates are valid spends or that a new model improves them.

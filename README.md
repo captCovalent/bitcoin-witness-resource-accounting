@@ -123,6 +123,15 @@ PYTHONPATH=src python3 scripts/estimate_historical_sample.py \
 
 Transactions within a block are not treated as independent samples. See `docs/protected-cohorts.md` and `docs/adversarial-simulation-contract.md` for the falsification sets and transformation contract that must be in place before model implementation.
 
+Run the model-free adversarial boundary suite under current BIP141 accounting:
+
+```sh
+PYTHONPATH=src python3 scripts/run_adversarial_boundaries.py \
+  --output results/bip141-adversarial-boundaries-v1.json
+```
+
+The suite covers input splitting, transaction splitting, batching/unbatching, witness-element splitting, stripped-output padding, UTXO setup/spend lifecycles, and movement among argument, witness-script, tapscript, and annex shapes. Version 1 is explicitly `serialization_only`: it proves canonical serialization and exact accounting, not script validity, signatures, standardness, or relay. It exports element sizes but no opaque payload contents.
+
 ## Measurement terminology
 
 - **Stripped size**: canonical transaction serialization without marker, flag, or per-input witnesses.

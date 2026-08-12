@@ -64,3 +64,7 @@ A model is rejected or materially weakened when any of these hold:
 - its result depends on semantic selection or a hand-picked dataset.
 
 Failure is a valid result. No simulator parameter is an activation recommendation or consensus proposal.
+
+## Version 1 implementation status
+
+The initial engine generates canonical serialization-only constructions for input splitting, transaction splitting, batching/unbatching, witness-element splitting, stripped-output padding, UTXO manufacture plus spend, and witness-structure movement. It reports exact BIP141 stage/lifecycle weight and weight per achieved opaque byte. Dummy outpoints, values, scripts, commitments, and signatures prevent any stronger validity claim. Promotion to `consensus_valid` or `standard_policy_valid` requires executable regtest fixtures and node verification, not a label change.
