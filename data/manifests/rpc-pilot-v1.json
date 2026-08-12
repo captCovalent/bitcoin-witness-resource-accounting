@@ -1,0 +1,61 @@
+{
+  "blocks": [
+    {
+      "hash": "00000000000000000003a934e0709606e3fc62f2cdfa93738fea76a03f68aa7e",
+      "height": 581760,
+      "rank_digest": "00001f4f54eaa8135c168d623d4b974269879d58cc68d36a71e3b2b79c8baabe",
+      "stratum": "segwit_pre_taproot",
+      "time": 1561138227,
+      "transaction_count": 3421
+    },
+    {
+      "hash": "0000000000000000000307dc94f49250d8d40a89433a3f1ba869c53535a12590",
+      "height": 830432,
+      "rank_digest": "00000ec5f1ba3cfe7a16af5eb21f1d1acfe2d889a539ee4928e11e6557054fb6",
+      "stratum": "taproot_pre_halving4",
+      "time": 1707921897,
+      "transaction_count": 1871
+    },
+    {
+      "hash": "000000000000000000009c0468da7228d3e3ac365fe60e34cb3177154aef75cd",
+      "height": 896871,
+      "rank_digest": "00002f0f27bc1698170a2706918a443e1b49175f325b90118e2cd04b7ccefc31",
+      "stratum": "post_halving4",
+      "time": 1747339652,
+      "transaction_count": 2604
+    }
+  ],
+  "completed_utc": "2026-08-12T11:12:19.798007+00:00",
+  "manifest_version": 1,
+  "purpose": "rpc_and_baseline_parity_pilot_not_evidentiary_sample",
+  "sampling_algorithm": "sha256-height-rank-v1",
+  "seed": "wra-rpc-pilot-v1",
+  "started_utc": "2026-08-12T11:12:14.706035+00:00",
+  "strata": [
+    {
+      "end_height": 709631,
+      "name": "segwit_pre_taproot",
+      "sample_count": 1,
+      "start_height": 481824
+    },
+    {
+      "end_height": 839999,
+      "name": "taproot_pre_halving4",
+      "sample_count": 1,
+      "start_height": 709632
+    },
+    {
+      "end_height": 962136,
+      "name": "post_halving4",
+      "sample_count": 1,
+      "start_height": 840000
+    }
+  ],
+  "tip_height_at_start": 962136,
+  "transaction_count": 7896,
+  "transactions_output": {
+    "format": "jsonl",
+    "path": "rpc-pilot-v1.transactions.jsonl",
+    "sha256": "36049b846ace5742fba24c16b0ba944df9e1d62d52edd69c5f5b884926dc2352"
+  }
+}

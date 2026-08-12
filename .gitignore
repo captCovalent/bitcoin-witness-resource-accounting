@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.venv/
+build/
+dist/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Research outputs are reproducible artifacts. Keep the directory documentation,
+# but do not accidentally commit large generated datasets.
+results/*
+!results/README.md
+data/raw/*
+!data/raw/.gitkeep
+
+# Bitcoin Core authentication material must never enter the repository.
+.cookie
+bitcoin.conf
+

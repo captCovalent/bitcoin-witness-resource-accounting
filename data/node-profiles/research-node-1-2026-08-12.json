@@ -1,0 +1,61 @@
+{
+  "profile_version": 1,
+  "recorded_utc": "2026-08-12T11:10:20Z",
+  "source": "read-only JSON-RPC results supplied by the node operator",
+  "privacy": {
+    "credentials_stored": false,
+    "local_addresses_stored": false,
+    "peer_addresses_stored": false,
+    "proxy_addresses_stored": false
+  },
+  "node": {
+    "implementation": "Bitcoin Knots",
+    "version": 290300,
+    "subversion": "/Satoshi:29.3.0/Knots:20260507/",
+    "protocol_version": 70016
+  },
+  "chain": {
+    "network": "main",
+    "height": 962135,
+    "headers": 962135,
+    "best_block_hash": "0000000000000000000050bbba858e95baa5260555e5f44cbeb79316bfe4d675",
+    "best_block_time": 1786532043,
+    "initial_block_download": false,
+    "verification_progress": 0.9999972046137223,
+    "pruned": false,
+    "size_on_disk_bytes": 867027439824
+  },
+  "indexes": {
+    "txindex": {
+      "synced": true,
+      "best_block_height": 962135
+    },
+    "basic_block_filter_index": {
+      "synced": true,
+      "best_block_height": 962135
+    }
+  },
+  "mempool_policy_snapshot": {
+    "loaded": true,
+    "transaction_count": 2691,
+    "serialized_bytes": 684970,
+    "dynamic_memory_usage_bytes": 4574848,
+    "max_memory_bytes": 300000000,
+    "minimum_feerate_btc_kvb": "0.00001000",
+    "minimum_relay_feerate_btc_kvb": "0.00001000",
+    "incremental_relay_feerate_btc_kvb": "0.00001000",
+    "full_rbf": true,
+    "rbf_policy": "always",
+    "truc_policy": "accept"
+  },
+  "node_warnings": [
+    "Warning: This outdated version does not support the BIP110/RDTS upgrade, and is therefore vulnerable to displaying fake or fraudulent transactions. Please update: https://bitcoinknots.org/"
+  ],
+  "qualification": {
+    "historical_block_data_available": true,
+    "historical_transaction_lookup_available": true,
+    "prevout_backed_getblock_verbosity_3_expected": true,
+    "live_rpc_pilot_completed": true,
+    "live_rpc_pilot_manifest": "../manifests/rpc-pilot-v1.json"
+  }
+}

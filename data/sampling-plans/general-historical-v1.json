@@ -1,0 +1,70 @@
+{
+  "plan_version": 1,
+  "plan_id": "general-historical-v1",
+  "status": "frozen_before_seed_block",
+  "created_utc": "2026-08-12T11:30:00Z",
+  "chain": "main",
+  "population_unit": "block",
+  "collection_unit": "whole_block",
+  "analysis_units": [
+    "transaction",
+    "input"
+  ],
+  "universe": {
+    "description": "Post-SegWit active-chain blocks through the precommitted research snapshot tip",
+    "start_height": 481824,
+    "end_height": 962135,
+    "block_count": 480312
+  },
+  "sampling_algorithm": "sha256-height-rank-v1",
+  "total_sampled_blocks": 256,
+  "strata": [
+    {"name": "height_01", "start_height": 481824, "end_height": 511843, "sample_count": 16},
+    {"name": "height_02", "start_height": 511844, "end_height": 541863, "sample_count": 16},
+    {"name": "height_03", "start_height": 541864, "end_height": 571883, "sample_count": 16},
+    {"name": "height_04", "start_height": 571884, "end_height": 601903, "sample_count": 16},
+    {"name": "height_05", "start_height": 601904, "end_height": 631923, "sample_count": 16},
+    {"name": "height_06", "start_height": 631924, "end_height": 661943, "sample_count": 16},
+    {"name": "height_07", "start_height": 661944, "end_height": 691963, "sample_count": 16},
+    {"name": "height_08", "start_height": 691964, "end_height": 721983, "sample_count": 16},
+    {"name": "height_09", "start_height": 721984, "end_height": 752002, "sample_count": 16},
+    {"name": "height_10", "start_height": 752003, "end_height": 782021, "sample_count": 16},
+    {"name": "height_11", "start_height": 782022, "end_height": 812040, "sample_count": 16},
+    {"name": "height_12", "start_height": 812041, "end_height": 842059, "sample_count": 16},
+    {"name": "height_13", "start_height": 842060, "end_height": 872078, "sample_count": 16},
+    {"name": "height_14", "start_height": 872079, "end_height": 902097, "sample_count": 16},
+    {"name": "height_15", "start_height": 902098, "end_height": 932116, "sample_count": 16},
+    {"name": "height_16", "start_height": 932117, "end_height": 962135, "sample_count": 16}
+  ],
+  "seed": {
+    "method": "future_bitcoin_block_hash",
+    "height": 962280,
+    "minimum_depth": 100,
+    "domain": "wra-general-historical-v1"
+  },
+  "selection_rules": {
+    "include_coinbase": true,
+    "include_all_transactions_in_selected_blocks": true,
+    "semantic_content_filters": false,
+    "transaction_size_filters": false,
+    "witness_size_filters": false,
+    "replacement": false,
+    "missing_block_policy": "fail_closed",
+    "missing_prevout_policy": "retain_and_report_unclassified",
+    "duplicate_transaction_policy": "fail_closed"
+  },
+  "inference": {
+    "primary_reporting": "per_stratum_and_inclusion_probability_weighted_aggregate",
+    "stratum_block_weight": "population_block_count_divided_by_sampled_block_count",
+    "confidence_interval_unit": "sampled_block_cluster",
+    "warning": "Transaction observations within a block are not treated as independent samples"
+  },
+  "precommitment_context": {
+    "observed_tip_height_before_freeze": 962136,
+    "observed_tip_hash_before_freeze": null,
+    "previous_rpc_snapshot_height": 962135,
+    "previous_rpc_snapshot_hash": "0000000000000000000050bbba858e95baa5260555e5f44cbeb79316bfe4d675",
+    "pilot_manifest": "../manifests/rpc-pilot-v1.json",
+    "pilot_results_excluded_from_general_sample_inference": true
+  }
+}

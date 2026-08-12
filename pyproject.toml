@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "witness-resource-accounting"
+version = "0.1.0"
+description = "Content-neutral research tools for Bitcoin witness resource accounting"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+wra = "witness_resource_accounting.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
