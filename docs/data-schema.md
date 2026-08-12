@@ -29,6 +29,8 @@ The JSON export contains transaction-level metrics plus per-input and per-output
 
 RPC whole-block collection adds a `source` object containing RPC method and verbosity, stratum, block height/hash/time, and transaction index. These fields establish provenance and do not alter transaction measurements. The associated manifest records the sampling algorithm, seed, strata, acquisition interval, selected block ranks/hashes, transaction count, and SHA256 checksum of the JSONL output.
 
+The structural summary's per-block entries include transaction, witness-transaction, and input counts plus stripped bytes, witness serialization bytes, BIP141 weight, and the block's maximum transaction witness size. The inference output records the sampling-plan hash, stratum inclusion probabilities/design weights, estimated universe totals, finite-population standard errors, and rescaled block-bootstrap intervals.
+
 ## Per-input fields
 
 Each `inputs` entry contains its index, displayed prevout transaction ID, prevout output index, scriptSig size, sequence, base serialized size, and witness metrics. `witness.element_sizes` preserves element boundaries without exporting element contents.

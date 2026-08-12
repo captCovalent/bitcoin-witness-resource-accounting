@@ -85,6 +85,10 @@ The primary general-history design is specified in `data/sampling-plans/general-
 
 Blocks are sampling clusters. Aggregate estimates must use exact stratum inclusion weights, and uncertainty calculations must resample blocks within strata rather than treating transactions from one block as independent observations.
 
+The reference inference implementation reports stratified simple-random-sampling-without-replacement totals, finite-population linearization standard errors, and deterministic within-stratum rescaled `n_h - 1` block-cluster bootstrap intervals. Ratio estimands are ratios of design-weighted totals. SHA256 counter/rejection sampling fixes bootstrap draws across runtimes. The linearization estimator is primary; equal-tailed bootstrap percentile intervals are a companion sensitivity result and are not studentized intervals. These are descriptive estimates for the frozen historical universe, not forecasts of future transaction demand.
+
+This implementation follows the rescaled-bootstrap construction introduced by Rao and Wu and the subsequent survey-methodology treatment of `n_h - 1` resampling. The application here is single-stage stratified SRSWOR with whole blocks as sampled units: [Rao and Wu (1988)](https://doi.org/10.1080/01621459.1988.10478591), [Rao, Wu, and Yue (1992)](https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X199200214486).
+
 ## 6. Adversarial transformations
 
 Each candidate model must be minimized over at least these transformations:
@@ -131,6 +135,8 @@ For cohorts, report count, total, mean, median, standard deviation where useful,
 "False positive" means extra effective weight imposed on a transaction in a protected monetary cohort; it does not assert semantic truth about any transaction. Report the full distribution and the worst independently verified examples.
 
 Advanced protocols must be evaluated on realistic failure/unilateral paths, not only cooperative happy paths. Large cryptographic witnesses, recovery scripts, vaults, DLCs, Lightning force closes/justice transactions, multisig, CoinJoin, BitVM-style constructions, and plausible post-quantum witnesses are explicit counterexample targets.
+
+The evidence tiers, required protected sets, and reporting rules are frozen in `docs/protected-cohorts.md` before model parameters exist. The required adversarial objectives, transformations, validity labels, lifecycle boundaries, and rejection conditions are defined in `docs/adversarial-simulation-contract.md`.
 
 ## 9. Reproducibility
 

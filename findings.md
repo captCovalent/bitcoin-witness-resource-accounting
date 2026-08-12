@@ -37,3 +37,7 @@ No evidence-based answer is available yet for:
 6. whether this research direction should be abandoned.
 
 These questions must remain explicitly unanswered until representative data and adversarial simulations exist.
+
+## Pre-model apparatus
+
+The protected-cohort contract, adversarial transformation contract, and stratified whole-block inference method were specified before any alternative accounting model. Historical uncertainty uses blocks as clusters and includes the finite population correction; transaction counts are not misrepresented as independent sampling units.

@@ -90,6 +90,7 @@ def summarize_result_bundle(manifest_path: Path, transactions_path: Path) -> dic
                         "stratum": source["stratum"],
                         "transaction_count": 0,
                         "witness_transaction_count": 0,
+                        "input_count": 0,
                         "total_stripped_bytes": 0,
                         "total_witness_serialization_bytes": 0,
                         "total_bip141_weight": 0,
@@ -100,6 +101,7 @@ def summarize_result_bundle(manifest_path: Path, transactions_path: Path) -> dic
                 raise ValueError("inconsistent block provenance within one height")
             block["transaction_count"] += 1
             block["witness_transaction_count"] += bool(record["has_witness"])
+            block["input_count"] += record["input_count"]
             block["total_stripped_bytes"] += record["stripped_size"]
             block["total_witness_serialization_bytes"] += record["witness_serialization_size"]
             block["total_bip141_weight"] += record["bip141_weight"]

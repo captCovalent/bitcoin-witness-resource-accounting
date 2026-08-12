@@ -52,6 +52,12 @@ The 2026 draft [Witness Version 3: ML-DSA-65 Post-Quantum Key-Path Spending](htt
 
 The Bitcoin-Dev discussion [Aligning privacy incentives in P2MR](https://groups.google.com/g/bitcoindev/c/p8AVEmAtWdA) discusses possible additional witness discounts for elliptic-curve spends in a post-quantum-capable construction. This is evidence that witness pricing affects upgrade and privacy incentives, not evidence for a particular factor.
 
+## Sampling and uncertainty
+
+[Rao and Wu (1988)](https://doi.org/10.1080/01621459.1988.10478591) introduce resampling inference for complex survey designs and require rescaling so bootstrap variance reduces to the standard variance estimator for linear statistics. [Rao, Wu, and Yue (1992)](https://www150.statcan.gc.ca/n1/en/catalogue/12-001-X199200214486) review the extension and empirical behavior for stratified simple random sampling and non-smooth statistics. These sources support resampling primary sampling units within strata rather than treating transactions nested inside one selected block as independent.
+
+The project's reference estimator uses exact stratified SRSWOR linearization variance with the finite-population correction as the primary uncertainty calculation. Its deterministic `n_h - 1` rescaled block bootstrap provides companion equal-tailed percentile intervals for totals and ratios. It does not claim a studentized bootstrap interval or general multistage-survey implementation.
+
 ## Open literature tasks before models
 
 - Trace the complete history of bounded or capped witness-discount proposals, including mailing-list posts, PRs, and unpublished drafts.

@@ -110,6 +110,19 @@ PYTHONPATH=src python3 scripts/validate_sampling_plan.py \
 
 The selection seed is the future mainnet block hash at height 962,280. Collection is intentionally unavailable until the node tip reaches 962,380, giving that seed a minimum depth of 100 blocks. The large-sample collector streams transaction records atomically to disk rather than retaining the dataset in memory.
 
+After collection and structural summarization, calculate exact stratum-weighted totals and deterministic block-cluster uncertainty intervals with:
+
+```sh
+PYTHONPATH=src python3 scripts/estimate_historical_sample.py \
+  --plan data/sampling-plans/general-historical-v1.json \
+  --summary results/general-historical-v1.summary.json \
+  --bootstrap-replicates 2000 \
+  --bootstrap-seed wra-design-bootstrap-v1 \
+  --output results/general-historical-v1.inference.json
+```
+
+Transactions within a block are not treated as independent samples. See `docs/protected-cohorts.md` and `docs/adversarial-simulation-contract.md` for the falsification sets and transformation contract that must be in place before model implementation.
+
 ## Measurement terminology
 
 - **Stripped size**: canonical transaction serialization without marker, flag, or per-input witnesses.
@@ -129,6 +142,8 @@ These distinctions are intentional. Referring to all three witness measurements 
 - `scripts/`: reproducible command-line entry points.
 - `docs/methodology.md`: research design, sampling, classification, and falsification criteria.
 - `docs/research-notes.md`: primary-source review and open literature questions.
+- `docs/protected-cohorts.md`: monetary and advanced-protocol protection contract.
+- `docs/adversarial-simulation-contract.md`: required bypass search and lifecycle accounting.
 - `docs/data-schema.md`: stable output fields and units.
 - `data/`: dataset manifests and provenance only; raw payload corpora are excluded by default.
 - `results/`: generated-result conventions; large outputs are ignored by Git.
