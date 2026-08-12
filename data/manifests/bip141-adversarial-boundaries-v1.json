@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "experiment": "model_free_bip141_adversarial_boundaries",
+  "generated_utc": "2026-08-12T12:01:05Z",
+  "generator_revision": "bcae0597e38011e824f2c5494047899aacd16d82",
+  "command": "PYTHONPATH=src python3 scripts/run_adversarial_boundaries.py --output results/bip141-adversarial-boundaries-v1.json",
+  "candidate_models": [],
+  "validity_level": "serialization_only",
+  "opaque_sizes": [0, 1, 31, 32, 63, 64, 65, 252, 253, 254, 511, 512, 4095, 4096, 65535, 65536, 96000],
+  "split_counts": [1, 2, 4, 8, 16],
+  "padding_sizes": [0, 1, 32, 252, 253, 1024],
+  "construction_count": 595,
+  "transformation_counts": {
+    "batching_unbatching": 85,
+    "input_splitting": 85,
+    "stripped_output_padding": 102,
+    "transaction_splitting": 85,
+    "utxo_manufacturing": 85,
+    "witness_element_splitting": 85,
+    "witness_structure_movement": 68
+  },
+  "output": {
+    "path": "results/bip141-adversarial-boundaries-v1.json",
+    "size_bytes": 1648039,
+    "sha256": "20da2842089211f6ee1807609393c452b860a1c71e095b0061025421bbf515d2",
+    "raw_transaction_hex_included": false,
+    "opaque_payload_contents_included": false
+  }
+}
